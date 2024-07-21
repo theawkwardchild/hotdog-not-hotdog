@@ -1,0 +1,12 @@
+   <div className="mainContainer">
+     <h1>Hot Dog Detector</h1>
+     <div className="imagePane">
+       <div className='imageContainer'>
+         <img src={null /* add image here */} alt="Selected Image" />
+       </div>
+     </div>
+     <input id="imageInput" type="file" accept="image/*" onChange={null /* add function here */} />
+     <button onClick={detectHotdog} >
+       Detect Hotdog
+     </button>
+   </div>

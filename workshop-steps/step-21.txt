@@ -1,0 +1,36 @@
+ async function detectHotdog() {
+   setIsLoading(true);
+   try {
+     const response = await openai.chat.completions.create({
+       model: "gpt-4o-mini",
+       messages: [
+         {
+           role: "user",
+           content: [
+             { type: "text", text: "Does this image contain a hotdog? Only respond with true or false and nothing else. Do not add any explanations. If you are unsure, respond with false." },
+             {
+               type: "image_url",
+               image_url: {
+                 "url": base64Image,
+               },
+             },
+           ],
+         },
+       ],
+
+
+     });
+
+
+     if (response.choices[0].message.content.toLowerCase() === "true") {
+       setIsHotdog(true);
+       setImageBorder("green");
+     } else {
+       setIsHotdog(false);
+       setImageBorder("red");
+     }
+   } finally {
+     setIsLoading(false);
+   }
+ }
+

@@ -1,0 +1,9 @@
+ const handleImageChange = (event) => {
+   setSelectedImage(event.target.files[0]);
+   setImageBorder("gray");
+   setIsHotdog(null);
+   const reader = new FileReader();
+   reader.readAsDataURL(event.target.files[0]);
+   reader.onloadend = () => setBase64Image(reader.result);
+ };
+

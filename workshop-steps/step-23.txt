@@ -1,0 +1,10 @@
+     <img
+           style={{
+             maxWidth: "500px",
+             maxHeight: "500px",
+             border: `5px solid ${imageBorder}`,
+             display: "block",
+           }}
+           src={base64Image}
+           alt="Selected Image"
+         />
